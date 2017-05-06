@@ -1,0 +1,17 @@
+#-*- coding: utf-8 -*
+
+#解决思路：1. 输入身高体重数值，并赋值给变量
+#2. 计算BMI值
+#3. if条件判断
+
+weight = input("Please input your weight in KG: ")
+height = input("and your height in M please: ")
+
+BMI = weight / (height * height)
+print "Your BMI is %.1f, " %(BMI)
+if BMI < 18.5:
+    print "and you are too thin."
+elif BMI >= 18.5 and BMI < 24:
+    print "and you are normal."
+else:
+    print "and you are overweighted."
