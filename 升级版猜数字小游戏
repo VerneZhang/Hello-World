@@ -1,0 +1,37 @@
+#-*- coding: utf-8 -*
+from random import randint
+
+turns = 0#计数器：轮数
+Times = 0#计数器：总次数
+while True:
+    decision = input("输入整数1开始，输入其他结束游戏：\n")
+    if decision == 1:
+        print ("每轮您可以猜5次")
+        num = input("猜猜我现在想的是整数几？\n")  # num 是人猜的数字
+        Number = randint(1, 10)  # Number 是电脑内数字
+        turns += 1#轮数累加
+        times = 0  # 计数器：每轮次数
+        while times < 5:
+            Times += 1#总次数累加
+            times += 1#次数累加
+            if num < Number:
+                print "太小啦！您还剩%d次机会！"%(5 - times)
+                if times >= 5:
+                    print ("您输了！")
+                    break
+                num = input()
+            elif num > Number:
+                print "太大了！您还剩%d次机会！"%(5 - times)
+                if times >= 5:
+                    print ("您输了！")
+                    break
+                num = input()
+            else:
+                print "被你猜中啦！再玩一次吗？",
+                break
+    else:
+         break
+if turns > 0:# 防止模运算错误
+    print ("游戏结束：你猜了%d轮游戏，平均每%.2f猜中一次。") %(turns, Times/turns)
+else:
+    print ("游戏结束：您玩了%d轮游戏。") %(turns)
