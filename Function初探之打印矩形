@@ -1,0 +1,7 @@
+#-*- coding: utf-8 -*
+
+def draw_ract(length=5, width=5, symbol="*"):
+    for i in range(0, width):#打印width行
+        for j in range(0, length):#打印length列
+            print symbol,
+        print ""
